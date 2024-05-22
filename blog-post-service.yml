@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/blog_post
+    username: {cipher} a48d50252a10796cf8001207d1a316d7e4b77f3698ae9cdb16dace41165562b8
+    password: {cipher} 8a3fcfeea4fbcc07cf746d4b24fccc3f5a6eb92a413c0c03fd43646b7f3884b5
+
+server:
+  port: 8081
