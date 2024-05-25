@@ -28,6 +28,7 @@ resilience4j:
         ignore-exceptions:
           - dev.mmaksymko.comments.configs.exceptions.ResourceGoneException
           - dev.mmaksymko.comments.configs.exceptions.ExternalApiClientException
+          - io.github.resilience4j.ratelimiter.RequestNotPermitted
   ratelimiter:
     instances:
       rate-limit-comment:
