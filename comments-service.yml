@@ -22,7 +22,7 @@ eureka:
 resilience4j:
   retry:
     instances:
-      retry-adding-comment:
+      retry-comment:
         max-attempts: 3
         wait-duration: 1s
         ignore-exceptions:
