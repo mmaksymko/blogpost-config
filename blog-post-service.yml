@@ -18,5 +18,18 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
 
+resilience4j:
+  retry:
+    instances:
+      retry-post:
+        max-attempts: 3
+        wait-duration: 1s
+  ratelimiter:
+    instances:
+      rate-limit-post:
+        timeout-duration: 0s
+        limit-refresh-period: 5s
+        limit-for-period: 2
+
 server:
   port: 8081
