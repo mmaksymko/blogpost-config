@@ -27,5 +27,14 @@ management:
         include:
           - "*"
 
+geolite2:
+  country-location: classpath:GeoLite2-Country.mmdb
+  blocked-counties:
+    - RU
+    - BY
+    - IL
+    - CN
+    - VA
+
 server:
   port: 8080
