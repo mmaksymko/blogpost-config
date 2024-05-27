@@ -6,6 +6,12 @@ spring:
           enabled: true
           lower-case-service-id: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'health,gateway.routes'
+
 eureka:
   instance:
     prefer-ip-address: true
