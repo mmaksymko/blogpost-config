@@ -8,12 +8,6 @@ spring:
       actuator:
         enabled: true
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: 'health,gatewayroutes'
-
 eureka:
   instance:
     prefer-ip-address: true
