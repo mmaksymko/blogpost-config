@@ -25,8 +25,7 @@ management:
     web:
       exposure:
         include:
-          - "health"
-          - "gateway/routes"
+          - "*"
 
 server:
   port: 8080
