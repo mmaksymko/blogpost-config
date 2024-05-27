@@ -24,6 +24,11 @@ resilience4j:
       retry-post:
         max-attempts: 3
         wait-duration: 1s
+        record-exceptions:
+          - org.springframework.dao.DataAccessResourceFailureException
+          - org.springframework.dao.QueryTimeoutException
+          - org.springframework.dao.CannotAcquireLockException
+          - org.springframework.dao.DeadlockLoserDataAccessException
   ratelimiter:
     instances:
       rate-limit-post:
