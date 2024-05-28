@@ -37,4 +37,5 @@ resilience4j:
         limit-for-period: 2
 
 server:
+  address: 0.0.0.0
   port: 8081
