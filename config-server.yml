@@ -1,0 +1,15 @@
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+server:
+  port:
+    8071
+
+encrypt:
+  key: ${BLOGPOST_ENCRYPTION_KEY}
