@@ -2,15 +2,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8070/eureka/
-
-geolite2:
-  country-location: classpath:GeoLite2-Country.mmdb
-  local-hosts:
-    - 127.0.0.1
-    - 0:0:0:0:0:0:0:1
-  blocked-counties:
-    - RU
-    - BY
-    - IL
-    - CN
-    - VA
