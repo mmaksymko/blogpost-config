@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://database:5432/blog_post_comment
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8070/eureka/
