@@ -3,6 +3,8 @@ spring:
     hibernate:
       ddl-auto: none
     show-sql: true
+    open-in-view: false
+
   datasource:
     driverClassName: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/blog_post
