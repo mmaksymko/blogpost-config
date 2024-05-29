@@ -1,0 +1,57 @@
+spring:
+  cache:
+    type: caffeine
+    caffeine:
+      spec:
+        maximumSize=100,expireAfterAccess=24h
+      
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/reaction
+    username: "{cipher}a48d50252a10796cf8001207d1a316d7e4b77f3698ae9cdb16dace41165562b8"
+    password: "{cipher}8a3fcfeea4fbcc07cf746d4b24fccc3f5a6eb92a413c0c03fd43646b7f3884b5"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8070/eureka/
+
+resilience4j:
+  retry:
+    instances:
+      retry-comment:
+        max-attempts: 3
+        wait-duration: 1s
+        record-exceptions:
+          - org.springframework.dao.DataAccessResourceFailureException
+          - org.springframework.dao.QueryTimeoutException
+          - org.springframework.dao.CannotAcquireLockException
+          - org.springframework.dao.DeadlockLoserDataAccessException
+  ratelimiter:
+    instances:
+      rate-limit-comment:
+        timeout-duration: 5s
+        limit-refresh-period: 5s
+        limit-for-period: 2
+  circuitbreaker:
+    instances:
+      circuit-breaker-comment:
+        register-health-indicator: true
+        minimum-number-of-calls: 10
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 50
+        record-exceptions:
+          - dev.mmaksymko.comments.configs.exceptions.ExternalApiServerException
+
+server:
+  port: 8083
