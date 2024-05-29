@@ -14,6 +14,8 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
+  config:
+    import: optional:configserver:http://localhost:8071
 
 management:
   endpoint:
