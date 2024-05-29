@@ -4,8 +4,12 @@ spring:
       ddl-auto: none
     show-sql: true
   datasource:
+    host: localhost
+    port: 5432
+    db-name: blog_post
+    provider: postgresql
+    url: jdbc:${spring.jpa.datasource.provider}://${spring.jpa.datasource.host}:${spring.jpa.datasource.port}/${spring.jpa.datasource.db-name}
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/blog_post
     username: "{cipher}a48d50252a10796cf8001207d1a316d7e4b77f3698ae9cdb16dace41165562b8"
     password: "{cipher}8a3fcfeea4fbcc07cf746d4b24fccc3f5a6eb92a413c0c03fd43646b7f3884b5"
 
