@@ -1,4 +1,49 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      actuator:
+        enabled: true
+
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
+    register-with-eureka: true
+    fetch-registry: true
     serviceUrl:
       defaultZone: http://discovery-server:8070/eureka/
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+
+geolite2:
+  country-location: classpath:GeoLite2-Country.mmdb
+  local-hosts:
+    - 127.0.0.1
+    - 0:0:0:0:0:0:0:1
+  blocked-counties:
+    - RU
+    - BY
+    - IL
+    - CN
+    - VA
+
+server:
+  port: 8080
+  
+  logging:
+    level:
+      root: TRACE
+      org.springframework.boot.context.config: TRACE
+      org.springframework.core.env: TRACE
