@@ -44,5 +44,12 @@ resilience4j:
         record-exceptions:
           - dev.mmaksymko.comments.configs.exceptions.ExternalApiServerException
 
+  kafka:
+    bootstrap-servers:
+      kafka:9092
+    consumer:
+      group-id: comments-service-group-id
+      auto-offset-reset: earliest
+
 server:
   port: 8082

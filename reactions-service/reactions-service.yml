@@ -50,5 +50,12 @@ resilience4j:
         record-exceptions:
           - dev.mmaksymko.reactions.configs.exceptions.ExternalApiServerException
 
+  kafka:
+    bootstrap-servers:
+      kafka:9092
+    consumer:
+      group-id: reactions-service-group-id
+      auto-offset-reset: earliest
+
 server:
   port: 8083

@@ -35,5 +35,12 @@ resilience4j:
         limit-refresh-period: 5s
         limit-for-period: 2
 
+  kafka:
+    bootstrap-servers:
+      kafka:9092
+    consumer:
+      group-id: blog-post-service-group-id
+      auto-offset-reset: earliest
+
 server:
   port: 8081
