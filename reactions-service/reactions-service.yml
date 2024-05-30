@@ -48,7 +48,7 @@ resilience4j:
         wait-duration-in-open-state: 10s
         failure-rate-threshold: 50
         record-exceptions:
-          - dev.mmaksymko.comments.configs.exceptions.ExternalApiServerException
+          - dev.mmaksymko.reactions.configs.exceptions.ExternalApiServerException
 
 server:
   port: 8083
