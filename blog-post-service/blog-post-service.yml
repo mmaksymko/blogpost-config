@@ -6,7 +6,7 @@ spring:
     open-in-view: false
   kafka:
     consumer:
-      group-id: comments-service-group-id
+      group-id: blog-service-group-id
       auto-offset-reset: earliest
 
   datasource:
