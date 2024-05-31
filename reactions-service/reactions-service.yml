@@ -4,7 +4,11 @@ spring:
     caffeine:
       spec:
         maximumSize=100,expireAfterAccess=24h
-      
+  kafka:
+    consumer:
+      group-id: reactions-service-group-id
+      auto-offset-reset: earliest
+
   jpa:
     hibernate:
       ddl-auto: none
@@ -49,13 +53,6 @@ resilience4j:
         failure-rate-threshold: 50
         record-exceptions:
           - dev.mmaksymko.reactions.configs.exceptions.ExternalApiServerException
-
-  kafka:
-    bootstrap-servers:
-      kafka:9092
-    consumer:
-      group-id: reactions-service-group-id
-      auto-offset-reset: earliest
 
 server:
   port: 8083

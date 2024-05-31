@@ -4,6 +4,10 @@ spring:
       ddl-auto: none
     show-sql: true
     open-in-view: false
+  kafka:
+    consumer:
+      group-id: comments-service-group-id
+      auto-offset-reset: earliest
 
   datasource:
     driverClassName: org.postgresql.Driver
@@ -43,13 +47,6 @@ resilience4j:
         failure-rate-threshold: 50
         record-exceptions:
           - dev.mmaksymko.comments.configs.exceptions.ExternalApiServerException
-
-  kafka:
-    bootstrap-servers:
-      kafka:9092
-    consumer:
-      group-id: comments-service-group-id
-      auto-offset-reset: earliest
 
 server:
   port: 8082

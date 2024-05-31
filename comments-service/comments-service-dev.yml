@@ -1,6 +1,9 @@
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/blog_post_comment
+  kafka:
+    bootstrap-servers:
+      localhost:9092
 
 eureka:
   client:
