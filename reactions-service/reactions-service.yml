@@ -6,7 +6,7 @@ spring:
         maximumSize=100,expireAfterAccess=24h
   kafka:
     consumer:
-      group-id: comments-service-group-id
+      group-id: reactions-service-group-id
       auto-offset-reset: earliest
 
   jpa:
