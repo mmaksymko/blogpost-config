@@ -4,8 +4,9 @@ spring:
   kafka:
     bootstrap-servers:
       kafka:9092
-  redis:
-    host: redis
+  data:
+    redis:
+      host: redis
 
 eureka:
   client:
