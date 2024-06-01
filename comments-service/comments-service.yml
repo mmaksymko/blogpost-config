@@ -12,6 +12,7 @@ spring:
     redis:
       port: 6379
       password: ${REDIS_PASSWORD}
+      database: 0
 
   datasource:
     driverClassName: org.postgresql.Driver
