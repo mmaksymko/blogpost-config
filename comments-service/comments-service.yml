@@ -5,25 +5,12 @@ spring:
     show-sql: true
     open-in-view: false
   kafka:
-    username: ${KAFKA_USERNAME}
-    password: ${KAFKA_PASSWORD}
     consumer:
-      group-id: blog-service-group-id
+      group-id: comments-service-group-id
       auto-offset-reset: earliest
-      security:
-        protocol: SASL_PLAINTEXT
-      sasl:
-        mechanism: SCRAM-SHA-256
-        jaas:
-          config: org.apache.kafka.common.security.scram.ScramLoginModule required username=${spring.kafka.username} password=${spring.kafka.password}
-    producer:
-      security:
-        protocol: SASL_PLAINTEXT
-      sasl:
-        mechanism: SCRAM-SHA-256
-        jaas:
-          config: org.apache.kafka.common.security.scram.ScramLoginModule required username=${spring.kafka.username} password=${spring.kafka.password};
-
+  redis:
+    port: 6379
+    password: ${REDIS_PASSWORD}
 
   datasource:
     driverClassName: org.postgresql.Driver
@@ -66,11 +53,3 @@ resilience4j:
 
 server:
   port: 8082
-
-logging:
-  level:
-    org:
-      apache:
-        kafka:
-          clients:
-            NetworkClient=off:
