@@ -56,3 +56,10 @@ resilience4j:
 
 server:
   port: 8083
+
+logging:
+  level:
+    org:
+      apache:
+        kafka:
+          clients: WARN
