@@ -51,7 +51,7 @@ resilience4j:
         limit-for-period: 2
   circuitbreaker:
     instances:
-      circuit-breaker-comment:
+      circuit-breaker-reaction:
         register-health-indicator: true
         minimum-number-of-calls: 10
         wait-duration-in-open-state: 10s
