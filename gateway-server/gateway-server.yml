@@ -36,4 +36,4 @@ geolite2:
     - CN
     - VA
 server:
-  port: 8072
+  port: 8080
