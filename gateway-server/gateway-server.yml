@@ -7,6 +7,26 @@ spring:
           lower-case-service-id: true
       actuator:
         enabled: true
+  main:
+    web-application-type: reactive
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${OAUTH2_CLIENT_ID}
+            client-secret: ${OAUTH2_CLIENT_SECRET}
+
+  kafka:
+    consumer:
+      group-id: gateway-service-group-id
+      auto-offset-reset: earliest
+  data:
+    redis:
+      port: 6379
+      password: ${REDIS_PASSWORD:"{cipher}720abc8f84b313cf215850ae5591f09aac4b13c93b7fddb0229895e392e30eb1"}
+      database: 2
 
 eureka:
   instance:
@@ -14,6 +34,17 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      circuit-breaker-auth:
+        register-health-indicator: true
+        minimum-number-of-calls: 10
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 50
+        record-exceptions:
+          - dev.mmaksymko.gateway.configs.exceptions.ExternalApiServerException
 
 management:
   endpoint:
@@ -35,5 +66,9 @@ geolite2:
     - IL
     - CN
     - VA
+
+frontend:
+  url: http://localhost:3000
+
 server:
   port: 8080
