@@ -1,3 +1,11 @@
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com
+
 minio:
   access-key: ${MINIO_ACCESS_KEY:"{cipher}9da0b2543739484519d64c30457433935dc05be06528f4bfd4a78ba60ee7c3c6"}
   access-secret: ${MINIO_SECRET_KEY:"{cipher}9f3dd5e4097bb1223a127541b364439864c927e119fa5f1eb4fc80842e9b3a41"}
