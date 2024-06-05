@@ -4,4 +4,4 @@ eureka:
       defaultZone: http://localhost:8070/eureka/
 
 minio:
-  url: http://localhost:9000/
+  url: ${MINIO_URL:http://localhost:9000/}
