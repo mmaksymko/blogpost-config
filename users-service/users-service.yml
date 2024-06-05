@@ -9,5 +9,16 @@ spring:
     username: ${POSTGRES_USER:"{cipher}116c45733072ecd24f41f4ddd289261e663a42b2c7634278b2ccc3cb303370e2"}
     password: ${POSTGRES_PASSWORD:"{cipher}720abc8f84b313cf215850ae5591f09aac4b13c93b7fddb0229895e392e30eb1"}
 
+resilience4j:
+  circuitbreaker:
+    instances:
+      circuit-breaker-comment:
+        register-health-indicator: true
+        minimum-number-of-calls: 10
+        wait-duration-in-open-state: 10s
+        failure-rate-threshold: 50
+        record-exceptions:
+          - dev.mmaksymko.users.configs.exceptions.ExternalApiServerException
+
 server:
   port: 8085
