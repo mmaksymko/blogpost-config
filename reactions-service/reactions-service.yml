@@ -72,3 +72,6 @@ logging:
       apache:
         kafka:
           clients: WARN
+          common:
+            utils:
+              AppInfoParser: OFF
