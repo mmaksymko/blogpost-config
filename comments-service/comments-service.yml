@@ -69,4 +69,4 @@ logging:
           clients: WARN
           common:
             utils:
-              AppInfoParser: OFF
+              AppInfoParser: WARN
