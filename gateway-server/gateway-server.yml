@@ -72,3 +72,10 @@ frontend:
 
 server:
   port: 8080
+
+logging:
+  level:
+    org:
+      apache:
+        kafka:
+          clients: WARN
