@@ -1,7 +1,7 @@
 spring:
   kafka:
     consumer:
-      group-id: reactions-service-group-id
+      group-id: email-service-group-id
       auto-offset-reset: earliest
   security:
     oauth2:
