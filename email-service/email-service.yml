@@ -1,0 +1,28 @@
+spring:
+  kafka:
+    consumer:
+      group-id: reactions-service-group-id
+      auto-offset-reset: earliest
+  security:
+    oauth2:
+      client:
+        provider:
+          google:
+            issuer-uri: https://accounts.google.com
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+
+server:
+  port: 8086
+
+logging:
+  level:
+    org:
+      apache:
+        kafka:
+          clients: WARN
