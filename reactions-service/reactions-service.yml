@@ -22,12 +22,6 @@ spring:
     driverClassName: org.postgresql.Driver
     username: ${POSTGRES_USER:"{cipher}116c45733072ecd24f41f4ddd289261e663a42b2c7634278b2ccc3cb303370e2"}
     password: ${POSTGRES_PASSWORD:"{cipher}720abc8f84b313cf215850ae5591f09aac4b13c93b7fddb0229895e392e30eb1"}
-  security:
-    oauth2:
-      client:
-        provider:
-          google:
-            issuer-uri: https://accounts.google.com
 
 eureka:
   instance:
@@ -62,6 +56,9 @@ resilience4j:
         failure-rate-threshold: 50
         record-exceptions:
           - dev.mmaksymko.reactions.configs.exceptions.ExternalApiServerException
+
+jwt:
+  secret: ${JWT_SECRET_KEY:secret}
 
 server:
   port: 8083

@@ -3,12 +3,6 @@ spring:
     consumer:
       group-id: email-service-group-id
       auto-offset-reset: earliest
-  security:
-    oauth2:
-      client:
-        provider:
-          google:
-            issuer-uri: https://accounts.google.com
   mail:
     host: ${EMAIL_HOST:smtp.gmail.com}
     port: 587
@@ -25,6 +19,9 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
+
+jwt:
+  secret: ${JWT_SECRET_KEY:secret}
 
 server:
   port: 8086
