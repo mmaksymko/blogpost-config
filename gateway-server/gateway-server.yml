@@ -70,6 +70,9 @@ geolite2:
 frontend:
   url: http://localhost:3000
 
+jwt:
+  secret: ${JWT_SECRET_KEY:secret}
+
 server:
   port: 8080
 
