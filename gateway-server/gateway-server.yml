@@ -46,6 +46,9 @@ resilience4j:
           - dev.mmaksymko.gateway.configs.exceptions.ExternalApiServerException
 
 management:
+  tracing:
+    sampling:
+      probability: 1.0
   endpoint:
     gateway:
       enabled: true
@@ -76,6 +79,8 @@ server:
   port: 8080
 
 logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
   level:
     org:
       apache:

@@ -20,6 +20,11 @@ resilience4j:
         record-exceptions:
           - dev.mmaksymko.users.configs.exceptions.ExternalApiServerException
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
 jwt:
   secret: ${JWT_SECRET_KEY:secret}
 
@@ -27,6 +32,8 @@ server:
   port: 8085
 
 logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
   level:
     org:
       apache:

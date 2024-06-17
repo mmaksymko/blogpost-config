@@ -5,3 +5,8 @@ eureka:
 
 minio:
   url: ${MINIO_URL:http://localhost:9000/}
+  
+  management:
+    zipkin:
+      tracing:
+        endpoint: http://localhost:9411/api/v2/spans

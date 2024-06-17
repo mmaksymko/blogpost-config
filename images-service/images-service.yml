@@ -26,8 +26,17 @@ resilience4j:
         limit-refresh-period: 5s
         limit-for-period: 2
 
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
 jwt:
   secret: ${JWT_SECRET_KEY:secret}
 
 server:
   port: 8084
+  
+logging:
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
